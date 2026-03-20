@@ -1,6 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './About.css';
+import uaeflag from '../../../public/images/uaeflag.png';
+import indiaflag from '../../../public/images/indiaflag.png';
+import southafricaflag from '../../../public/images/southafricaflag.png';
+import globeicon from '../../../public/images/globeicon.png';
+import personicon from '../../../public/images/personicon.png';
+
+import customersupport_icon from '../../../public/images/customersupport_icon.png';
+import assurityicon from '../../../public/images/assurityicon.png';
+import clipboardicon from '../../../public/images/clipboardicon.png';
+import handshakeicon from '../../../public/images/handshakeicon.png';
+import about from '../../assets/about.jpeg';
+
 
 const About = () => {
   const navigate = useNavigate();
@@ -36,25 +48,25 @@ const About = () => {
 
   // Why Choose Us data
   const whyChooseUs = [
-    { icon: '🇦🇪', title: 'UAE-Based Global Hub', description: 'Leverage our extensive global network to connect your business seamlessly across continents.' },
-    { icon: '🌐', title: 'Strong Sourcing Network', description: 'We handle special shipments with expert care and customized logistics solutions.' },
-    { icon: '💰', title: 'Competitive Pricing', description: 'Count on us for on-time deliveries that keep your operations running smoothly.' },
-    { icon: '⏱️', title: 'Timely Deliveries', description: 'Our tailored solutions fit your unique business needs, ensuring maximum efficiency.' },
-    { icon: '📋', title: 'Professional Trade Support', description: 'Experience round-the-clock support for any queries or logistics assistance.' },
-    { icon: '🤝', title: 'End-to-End Service', description: 'Join hundreds of satisfied clients who trust our reputable and esteemed company.' }
-  ];
-
+      { icon: globeicon, title: "UAE-Based Global Hub", description: "Leverage our extensive global network to connect your business seamlessly across continents." },
+      { icon: personicon, title: "Strong Sourcing Network", description: "We handle special shipments with expert care and customized logistics solutions." },
+      { icon: handshakeicon, title: "Competitive Pricing", description: "Count on us for on-time deliveries that keep your operations running smoothly." },
+      { icon: clipboardicon, title: "Timely Deliveries", description: "Our tailored solutions fit your unique business needs, ensuring maximum efficiency." },
+      { icon: personicon, title: "Professional Trade Support", description: "Experience round-the-clock support for any queries or logistics assistance." },
+      { icon: assurityicon, title: "End-to-End Service", description: "Join hundreds of satisfied clients who trust our reputable and esteemed company." }
+    ];
+  
   // Team data
   const team = [
-    { name: 'Ambikesh Tripathi', position: 'CEO - Founder', phone: '+971 56 911 9955', image: '/images/male.avif' },
-    { name: 'Spandana M', position: 'Operational Head', phone: '+70 264 566 579', image: '/images/female2.jpeg' }
+    { name: 'Ambikesh Tripathi', position: 'CEO - Founder', phone: '+971 56 911 9955', image: '/images/men1.png' },
+    { name: 'Spandana M', position: 'Operational Head', phone: '+70 264 566 579', image: '/images/lady.png' }
   ];
 
   // Locations
   const locations = [
-    { name: 'U.A.E', flag: '🇦🇪' },
-    { name: 'INDIA', flag: '🇮🇳' },
-    { name: 'AFRICA', flag: '🌍' }
+    { name: 'U.A.E', flag: uaeflag },
+    { name: 'INDIA', flag: indiaflag },
+    { name: 'AFRICA', flag: southafricaflag }
   ];
 
   return (
@@ -74,7 +86,7 @@ const About = () => {
         <div className="container">
           <div className="who-we-are-grid">
             <div className="who-we-are-image">
-              <img src="/images/aerial.jpg" alt="Who We Are" className="who-we-are-img" />
+              <img src={about} alt="Who We Are" className="who-we-are-img" />
             </div>
             <div className="who-we-are-content">
               <h2 className="section-title-left">Who We Are</h2>
@@ -142,7 +154,7 @@ const About = () => {
           <div className="why-choose-grid">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="why-choose-card">
-                <div className="why-choose-icon">{item.icon}</div>
+                <div className="why-choose-icon"><img src={item.icon}/></div>
                 <h3 className="why-choose-title">{item.title}</h3>
                 <p className="why-choose-description">{item.description}</p>
               </div>
@@ -185,7 +197,7 @@ const About = () => {
           <div className="locations-grid">
             {locations.map((location, index) => (
               <div key={index} className="location-card">
-                <div className="location-flag">{location.flag}</div>
+                <div className="location-flag"><img src={location.flag}/></div>
                 <h3 className="location-name">{location.name}</h3>
               </div>
             ))}

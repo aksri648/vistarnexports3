@@ -93,13 +93,8 @@ const slides = [
       name: "Industrial Chemicals",
       description: "Bulk Chemicals",
       image: "/images/chemicalcat.jpeg"
-    },
-    {
-      id: 7,
-      name: "Mechanical & Electrical",
-      description: "Industrial Equipment",
-      image: "/images/mechanicla-goods.jpg"
-    },
+    }
+    
     
   ];
 

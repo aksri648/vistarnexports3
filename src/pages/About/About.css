@@ -394,8 +394,16 @@
 }
 
 .location-flag {
-  font-size: 3.5rem;
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-flag img {
+  width: 60px;   /* adjust size */
+  height: 60px;
+  object-fit: contain;
 }
 
 .location-name {
