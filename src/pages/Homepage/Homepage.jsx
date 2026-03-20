@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
+import uaeflag from '../../../public/images/uaeflag.png';
+import indiaflag from '../../../public/images/indiaflag.png';
+import southafricaflag from '../../../public/images/southafricaflag.png';
+import globeicon from '../../../public/images/globeicon.png';
+import personicon from '../../../public/images/personicon.png';
+
+import customersupport_icon from '../../../public/images/customersupport_icon.png';
+import assurityicon from '../../../public/images/assurityicon.png';
+import clipboardicon from '../../../public/images/clipboardicon.png';
+import handshakeicon from '../../../public/images/handshakeicon.png';
+
 
 const Homepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,16 +23,8 @@ const Homepage = () => {
  // Banner slides data - UPDATED WITH NEW CONTENT
 const slides = [
   {
-    id: 1,
-    title: "Vistaran Exports",
-    subtitle: "Your Global Partner in Trading",
-    description: "Vistaran Exports is a trusted name in general trading and international trade, connecting buyers and suppliers across continents.",
-    cta: "Contact Us",
-    background: "linear-gradient(135deg, #0B014B 0%, #1a1a3a 100%)",
-    image: "/images/bannermain.jpg",
-    page: '/contact'
-  },
-  {
+    
+  
     id: 2,
     title: "Agriculture Products",
     subtitle: "Premium Quality Farm Produce",
@@ -37,7 +40,7 @@ const slides = [
     subtitle: "Quality Goods for Everyday Life",
     description: "Headquartered in the UAE, we offer reliable sourcing, timely delivery, and comprehensive logistics support for all consumer product needs.",
     cta: "Contact Us",
-    image: "/images/consumer.jpg",
+    image: "/images/consumergoodbanner.png",
     page: '/contact'
   },
   {
@@ -59,7 +62,7 @@ const slides = [
       id: 1,
       name: "Rice",
       description: "Premium Basmati & More",
-      image: "/images/ricecat.jpeg"
+      image: "/images/rice.png"
     },
     {
       id: 2,
@@ -81,26 +84,33 @@ const slides = [
     },
     {
       id: 5,
-      name: "Spare-Part",
+      name: "Spare Part",
       description: "Industrial Components",
       image: "/images/machinecat.jpeg"
     },
     {
       id: 6,
-      name: "Industrial-Chemicals",
+      name: "Industrial Chemicals",
       description: "Bulk Chemicals",
       image: "/images/chemicalcat.jpeg"
-    }
+    },
+    {
+      id: 7,
+      name: "Mechanical & Electrical",
+      description: "Industrial Equipment",
+      image: "/images/mechanicla-goods.jpg"
+    },
+    
   ];
 
   // Why Choose Us data
   const whyChooseUs = [
-    { icon: "🇦🇪", title: "UAE-Based Global Hub", description: "Leverage our extensive global network to connect your business seamlessly across continents." },
-    { icon: "🌐", title: "Strong Sourcing Network", description: "We handle special shipments with expert care and customized logistics solutions." },
-    { icon: "💰", title: "Competitive Pricing", description: "Count on us for on-time deliveries that keep your operations running smoothly." },
-    { icon: "⏱️", title: "Timely Deliveries", description: "Our tailored solutions fit your unique business needs, ensuring maximum efficiency." },
-    { icon: "📋", title: "Professional Trade Support", description: "Experience round-the-clock support for any queries or logistics assistance." },
-    { icon: "🤝", title: "End-to-End Service", description: "Join hundreds of satisfied clients who trust our reputable and esteemed company." }
+    { icon: globeicon, title: "UAE-Based Global Hub", description: "Leverage our extensive global network to connect your business seamlessly across continents." },
+    { icon: personicon, title: "Strong Sourcing Network", description: "We handle special shipments with expert care and customized logistics solutions." },
+    { icon: handshakeicon, title: "Competitive Pricing", description: "Count on us for on-time deliveries that keep your operations running smoothly." },
+    { icon: clipboardicon, title: "Timely Deliveries", description: "Our tailored solutions fit your unique business needs, ensuring maximum efficiency." },
+    { icon: personicon, title: "Professional Trade Support", description: "Experience round-the-clock support for any queries or logistics assistance." },
+    { icon: assurityicon, title: "End-to-End Service", description: "Join hundreds of satisfied clients who trust our reputable and esteemed company." }
   ];
 
   // Testimonials data
@@ -109,17 +119,19 @@ const slides = [
     { id: 2, name: "Saeed Bin Mohammed", title: "Client", quote: "Fast, secure, and efficient service from Vistaran Exports. Their 24/7 support helped me resolve queries quickly.", rating: "Good Services" },
     { id: 3, name: "Layla Al Mazrouei", title: "Client", quote: "Highly recommended for bespoke logistics solutions. Vistaran Exports understands our business and tailors services perfectly.", rating: "Great Work" },
     { id: 4, name: "Ahmad Al Farsi", title: "Client", quote: "Vistaran Exports delivers consistently on time with excellent customer service, making my shipping experience hassle-free and reliable.", rating: "On Time Delivery" },
-    { id: 2, name: "Saeed Bin Mohammed", title: "Client", quote: "Fast, secure, and efficient service from Vistaran Exports. Their 24/7 support helped me resolve queries quickly.", rating: "Good Services" }
-    
+    { id: 5, name: "Fatima Al Nuaimi", title: "Client", quote: "The team handled my special shipment with great care and professionalism. I trust them for all my import and export needs.", rating: "Fastest Response" },
+    { id: 6, name: "Saeed Bin Mohammed", title: "Client", quote: "Fast, secure, and efficient service from Vistaran Exports. Their 24/7 support helped me resolve queries quickly.", rating: "Good Services" },
+    { id: 7, name: "Layla Al Mazrouei", title: "Client", quote: "Highly recommended for bespoke logistics solutions. Vistaran Exports understands our business and tailors services perfectly.", rating: "Great Work" },
+    { id: 8, name: "Ahmad Al Farsi", title: "Client", quote: "Vistaran Exports delivers consistently on time with excellent customer service, making my shipping experience hassle-free and reliable.", rating: "On Time Delivery" },
   ];
 
 
 
   // Major Locations
   const locations = [
-    { name: "U.A.E", flag: "🇦🇪" },
-    { name: "INDIA", flag: "🇮🇳" },
-    { name: "AFRICA", flag: "🌍" }
+    { name: "U.A.E", flag: uaeflag },
+    { name: "INDIA", flag: indiaflag },
+    { name: "AFRICA", flag: southafricaflag }
   ];
 
   // Banner Navigation Functions
@@ -278,7 +290,7 @@ const slides = [
         <div className="container">
           <div className="who-we-are-grid">
             <div className="who-we-are-image">
-              <img src="/images/ship2.jpg" alt="Who We Are" className="who-we-are-img" />
+              <img src="/images/sidebar.png" alt="Who We Are" className="who-we-are-img" />
             </div>
             <div className="who-we-are-content">
               <h2 className="who-we-are-title">Who We Are</h2>
@@ -300,7 +312,7 @@ const slides = [
           <div className="categories-carousel-header">
             <div>
               <h2 className="categories-carousel-title">Product Categories</h2>
-              
+              <span className="categories-carousel-count">{productCategories.length} items</span>
             </div>
             <div className="categories-carousel-arrows">
               <button className="categories-carousel-arrow prev" onClick={prevCategorySlide}>‹</button>
@@ -369,7 +381,7 @@ const slides = [
           <div className="why-choose-us-grid">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="why-choose-us-card">
-                <div className="why-choose-us-icon">{item.icon}</div>
+                <div className="why-choose-us-icon"><img src={item.icon} alt={item.title} className="w-10 h-10" /></div>
                 <h3 className="why-choose-us-title">{item.title}</h3>
                 <p className="why-choose-us-description">{item.description}</p>
               </div>
@@ -386,7 +398,7 @@ const slides = [
           <div className="major-locations-grid">
             {locations.map((location, index) => (
               <div key={index} className="major-location-card">
-                <div className="major-location-flag">{location.flag}</div>
+                <div className="major-location-flag"><img src={location.flag} /></div>
                 <h3 className="major-location-name">{location.name}</h3>
               </div>
             ))}
@@ -453,7 +465,7 @@ const slides = [
       {/* Team Member 1 - Ambikesh Tripathi */}
       <div className="team-card">
         <div className="team-card-image">
-          <img src="/images/male.avif" alt="Ambikesh Tripathi" className="team-card-img" />
+          <img src="/images/men1.png" alt="Ambikesh Tripathi" className="team-card-img" />
         </div>
         <div className="team-card-content">
           <h3 className="team-card-name">Ambikesh Tripathi</h3>
@@ -465,7 +477,7 @@ const slides = [
       {/* Team Member 2 - Spandana M */}
       <div className="team-card">
         <div className="team-card-image">
-          <img src="/images/female2.jpeg" alt="Spandana M" className="team-card-img" />
+          <img src="/images/lady.png" alt="Spandana M" className="team-card-img" />
         </div>
         <div className="team-card-content">
           <h3 className="team-card-name">Spandana M</h3>
@@ -477,6 +489,7 @@ const slides = [
   </div>
 </section>
 
+    
       
     </div>
   );
