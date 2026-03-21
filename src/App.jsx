@@ -30,8 +30,8 @@ function App() {
           <Route path="/products/spice" element={<Spice />} />
           <Route path="/products/pulses" element={<Pulses />} />
           <Route path="/products/garments" element={<Garments />} />
-          <Route path="/products/spare-part" element={<SparePart />} />
-          <Route path="/products/industrial-chemicals" element={<IndustrialChemicals />} />
+          <Route path="/products/spare part" element={<SparePart />} />
+          <Route path="/products/industrial chemicals" element={<IndustrialChemicals />} />
         </Routes>
       </main>
       <Footer />

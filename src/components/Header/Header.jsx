@@ -40,8 +40,8 @@ const Header = () => {
   { name: 'Spices', path: '/products/spice', description: 'Authentic Indian Spices' },
   { name: 'Pulses', path: '/products/pulses', description: 'Protein-Rich Legumes' },
   { name: 'Garments', path: '/products/garments', description: 'Textile & Apparel' },
-  { name: 'Spare Part', path: '/products/spare-part', description: 'Industrial Components' },
-  { name: 'Industrial Chemicals', path: '/products/industrial-chemicals', description: 'Bulk Chemicals' },
+  { name: 'Spare Part', path: '/products/spare part', description: 'Industrial Components' },
+  { name: 'Industrial Chemicals', path: '/products/industrial chemicals', description: 'Bulk Chemicals' },
 ];
 
   return (
