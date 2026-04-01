@@ -61,36 +61,42 @@ const slides = [
     {
       id: 1,
       name: "Rice",
+      slug: "rice",
       description: "Premium Basmati & More",
       image: "/images/ricecats.jpeg"
     },
     {
       id: 2,
       name: "Spice",
+      slug: "spice",
       description: "Authentic Indian Spices",
       image: "/images/spicecat.jpeg"
     },
     {
       id: 3,
       name: "Pulses",
+      slug: "pulses",
       description: "Protein-Rich Legumes",
       image: "/images/pulsecat.jpeg"
     },
     {
       id: 4,
       name: "Garments",
+      slug: "garments",
       description: "Textile & Apparel",
       image: "/images/garmentcat.avif"
     },
     {
       id: 5,
       name: "Spare Part",
+      slug: "spare-part",
       description: "Industrial Components",
       image: "/images/machinecat.jpeg"
     },
     {
       id: 6,
       name: "Industrial Chemicals",
+      slug: "industrial-chemicals",
       description: "Bulk Chemicals",
       image: "/images/chemicalcat.jpeg"
     }
@@ -328,7 +334,7 @@ const slides = [
                         <div className="category-card-content">
                           <h3 className="category-card-name">{category.name}</h3>
                           <p className="category-card-description">{category.description}</p>
-                          <button className="category-card-btn" onClick={() => navigate(`/products/${category.name.toLowerCase()}`)}>
+                          <button className="category-card-btn" onClick={() => navigate(`/products/${category.slug}`)}>
                             View Products <span className="category-card-arrow">→</span>
                           </button>
                         </div>
