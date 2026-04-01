@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
-import uaeflag from '../../../public/images/uaeflag.png';
-import indiaflag from '../../../public/images/indiaflag.png';
-import southafricaflag from '../../../public/images/southafricaflag.png';
-import globeicon from '../../../public/images/globeicon.png';
-import personicon from '../../../public/images/personicon.png';
 
-import customersupport_icon from '../../../public/images/customersupport_icon.png';
-import assurityicon from '../../../public/images/assurityicon.png';
-import clipboardicon from '../../../public/images/clipboardicon.png';
-import handshakeicon from '../../../public/images/handshakeicon.png';
-
+const imageBase = `${import.meta.env.BASE_URL}images`;
+const imageUrl = (name) => `${imageBase}/${name}`;
 
 const Homepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,7 +23,7 @@ const slides = [
     description: "Vistaran Exports is a trusted name in general trading and international trade, connecting buyers and suppliers across continents with premium agricultural products.",
     cta: "Contact Us",
     background: "linear-gradient(135deg, #0B014B 0%, #1a6b3a 100%)",
-    image: "/images/grocery.jpg",
+    image: imageUrl('grocery.jpg'),
     page: '/contact'
   },
   {
@@ -40,7 +32,7 @@ const slides = [
     subtitle: "Quality Goods for Everyday Life",
     description: "Headquartered in the UAE, we offer reliable sourcing, timely delivery, and comprehensive logistics support for all consumer product needs.",
     cta: "Contact Us",
-    image: "/images/consumergoodbanner.png",
+    image: imageUrl('consumergoodbanner.png'),
     page: '/contact'
   },
   {
@@ -50,7 +42,7 @@ const slides = [
     description: "We supply a wide variety of goods across sectors including household essentials and industrial supplies with competitive pricing.",
     cta: "Contact Us",
     background: "linear-gradient(135deg, #2c3e50 0%, #1a2634 100%)",
-    image: "/images/household1.jpg",
+    image: imageUrl('household1.jpg'),
     page: '/contact'
   }
   
@@ -63,42 +55,42 @@ const slides = [
       name: "Rice",
       slug: "rice",
       description: "Premium Basmati & More",
-      image: "/images/ricecats.jpeg"
+      image: imageUrl('ricecats.jpeg')
     },
     {
       id: 2,
       name: "Spice",
       slug: "spice",
       description: "Authentic Indian Spices",
-      image: "/images/spicecat.jpeg"
+      image: imageUrl('spicecat.jpeg')
     },
     {
       id: 3,
       name: "Pulses",
       slug: "pulses",
       description: "Protein-Rich Legumes",
-      image: "/images/pulsecat.jpeg"
+      image: imageUrl('pulsecat.jpeg')
     },
     {
       id: 4,
       name: "Garments",
       slug: "garments",
       description: "Textile & Apparel",
-      image: "/images/garmentcat.avif"
+      image: imageUrl('garmentcat.avif')
     },
     {
       id: 5,
       name: "Spare Part",
       slug: "spare-part",
       description: "Industrial Components",
-      image: "/images/machinecat.jpeg"
+      image: imageUrl('machinecat.jpeg')
     },
     {
       id: 6,
       name: "Industrial Chemicals",
       slug: "industrial-chemicals",
       description: "Bulk Chemicals",
-      image: "/images/chemicalcat.jpeg"
+      image: imageUrl('chemicalcat.jpeg')
     }
     
     
@@ -106,12 +98,12 @@ const slides = [
 
   // Why Choose Us data
   const whyChooseUs = [
-    { icon: globeicon, title: "UAE-Based Global Hub", description: "Leverage our extensive global network to connect your business seamlessly across continents." },
-    { icon: personicon, title: "Strong Sourcing Network", description: "We handle special shipments with expert care and customized logistics solutions." },
-    { icon: handshakeicon, title: "Competitive Pricing", description: "Count on us for on-time deliveries that keep your operations running smoothly." },
-    { icon: clipboardicon, title: "Timely Deliveries", description: "Our tailored solutions fit your unique business needs, ensuring maximum efficiency." },
-    { icon: personicon, title: "Professional Trade Support", description: "Experience round-the-clock support for any queries or logistics assistance." },
-    { icon: assurityicon, title: "End-to-End Service", description: "Join hundreds of satisfied clients who trust our reputable and esteemed company." }
+    { icon: imageUrl('globeicon.png'), title: "UAE-Based Global Hub", description: "Leverage our extensive global network to connect your business seamlessly across continents." },
+    { icon: imageUrl('personicon.png'), title: "Strong Sourcing Network", description: "We handle special shipments with expert care and customized logistics solutions." },
+    { icon: imageUrl('handshakeicon.png'), title: "Competitive Pricing", description: "Count on us for on-time deliveries that keep your operations running smoothly." },
+    { icon: imageUrl('clipboardicon.png'), title: "Timely Deliveries", description: "Our tailored solutions fit your unique business needs, ensuring maximum efficiency." },
+    { icon: imageUrl('personicon.png'), title: "Professional Trade Support", description: "Experience round-the-clock support for any queries or logistics assistance." },
+    { icon: imageUrl('assurityicon.png'), title: "End-to-End Service", description: "Join hundreds of satisfied clients who trust our reputable and esteemed company." }
   ];
 
   // Testimonials data
@@ -130,9 +122,9 @@ const slides = [
 
   // Major Locations
   const locations = [
-    { name: "U.A.E", flag: uaeflag },
-    { name: "INDIA", flag: indiaflag },
-    { name: "AFRICA", flag: southafricaflag }
+    { name: "U.A.E", flag: imageUrl('uaeflag.png') },
+    { name: "INDIA", flag: imageUrl('indiaflag.png') },
+    { name: "AFRICA", flag: imageUrl('southafricaflag.png') }
   ];
 
   // Banner Navigation Functions
@@ -291,7 +283,7 @@ const slides = [
         <div className="container">
           <div className="who-we-are-grid">
             <div className="who-we-are-image">
-              <img src="/images/export.jpeg" alt="Who We Are" className="who-we-are-img" />
+              <img src={imageUrl('export.jpeg')} alt="Who We Are" className="who-we-are-img" />
             </div>
             <div className="who-we-are-content">
               <h2 className="who-we-are-title">Who We Are</h2>
@@ -466,7 +458,7 @@ const slides = [
       {/* Team Member 1 - Ambikesh Tripathi */}
       <div className="team-card">
         <div className="team-card-image">
-          <img src="/images/men1.png" alt="Ambikesh Tripathi" className="team-card-img" />
+          <img src={imageUrl('men1.png')} alt="Ambikesh Tripathi" className="team-card-img" />
         </div>
         <div className="team-card-content">
           <h3 className="team-card-name">Ambikesh Tripathi</h3>
@@ -478,7 +470,7 @@ const slides = [
       {/* Team Member 2 - Spandana M */}
       <div className="team-card">
         <div className="team-card-image">
-          <img src="/images/lady.png" alt="Spandana M" className="team-card-img" />
+          <img src={imageUrl('lady.png')} alt="Spandana M" className="team-card-img" />
         </div>
         <div className="team-card-content">
           <h3 className="team-card-name">Spandana M</h3>
