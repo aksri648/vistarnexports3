@@ -4,9 +4,14 @@ import { BrowserRouter } from 'react-router-dom';  // Make sure this import exis
 import App from './App';
 import './index.css';
 
+const repoBasename = '/vistarnexports3';
+const basename = window.location.pathname.startsWith(repoBasename)
+  ? repoBasename
+  : '/';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>  {/* This must wrap App */}
+    <BrowserRouter basename={basename}>  {/* This must wrap App */}
       <App />
     </BrowserRouter>
   </React.StrictMode>
